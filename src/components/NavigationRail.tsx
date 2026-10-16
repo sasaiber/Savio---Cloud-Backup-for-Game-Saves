@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { Icon, type IconName } from "./Icon";
+import { SavioLogo } from "./SavioLogo";
 import { useI18n } from "../i18n/I18nProvider";
 import { useSettings } from "../state/settings";
 
@@ -85,7 +86,7 @@ export const NavigationRail = memo(function NavigationRail({
             cursor: "pointer",
           }}
         >
-          <Icon name="bolt" size={28} />
+          <SavioLogo size={28} color="#FFFFFF" />
         </button>
       </div>
 

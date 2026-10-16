@@ -6,6 +6,7 @@ import { LANGUAGES, type Language } from "../i18n/languages";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Icon, type IconName } from "../components/Icon";
+import { SavioLogo } from "../components/SavioLogo";
 import { ExpressiveShape } from "../components/ExpressiveShape";
 import { springs } from "../theme/motion";
 import { api } from "../lib/tauri";
@@ -63,7 +64,7 @@ export function Onboarding({ onFinish }: { onFinish: () => void }) {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 32 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <ExpressiveShape size={48} initialShape="squircle" hoverShape="cookie9">
-              <Icon name="bolt" size={26} color="var(--md-sys-color-on-primary-container)" />
+              <SavioLogo size={26} color="var(--md-sys-color-on-primary-container)" />
             </ExpressiveShape>
             <div>
               <div style={{ fontSize: 20, fontWeight: 800, letterSpacing: "-0.3px" }}>Savio</div>
