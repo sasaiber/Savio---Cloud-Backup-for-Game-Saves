@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build and distribution outputs
+dist/
+build/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Rust / Cargo / Tauri build outputs
+src-tauri/target/
+src-tauri/gen/schemas/
+target/
+**/*.rs.bk
+Cargo.lock.back
+
+# Binary files & archives (large binaries must not be committed to Git)
+*.exe
+*.dll
+*.so
+*.dylib
+*.msi
+*.zip
+*.7z
+*.tar.gz
+src-tauri/bin/
+
+# Portable mode data & local settings (created next to the exe when running)
+data/
+portable.mode
+savio_settings.json
+settings.json
+
+# Temporary, debug & log files
+output.txt
+*.log
+crash.log
+crash_*.log
+.savio_test_write
+push_to_github.bat
+*.bat
+
+# IDE / Editor configuration
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
+.Spotlight-V100
+.Trashes
+$RECYCLE.BIN/
