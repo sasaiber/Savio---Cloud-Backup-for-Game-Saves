@@ -3,7 +3,7 @@ name = "savio"
 version = "0.1.0"
 description = "Savio — open-source cloud game save manager for Windows 11"
 authors = ["Savio contributors"]
-license = "GPL-3.0-or-later"
+license = "MIT"
 edition = "2021"
 rust-version = "1.80"
 

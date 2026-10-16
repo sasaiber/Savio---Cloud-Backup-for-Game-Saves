@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "description": "Savio — open-source cloud game save manager for Windows 11",
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
