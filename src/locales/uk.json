@@ -532,5 +532,33 @@
     "stageDownloading": "Завантаження",
     "stageRestoring": "Відновлення",
     "hide": "Сховати"
+  },
+  "updater": {
+    "title": "Оновлення Savio",
+    "subtitle": "Перевірка версій та релізи GitHub",
+    "currentVersion": "Поточна версія",
+    "latestVersion": "Останній реліз",
+    "upToDate": "У вас встановлена найновіша версія",
+    "upToDateDesc": "Savio повністю оновлений та актуальний.",
+    "updateAvailable": "Доступна нова версія: {version}!",
+    "updateAvailableDesc": "Рекомендується оновитися для нових функцій та виправлень.",
+    "checkNow": "Перевірити зараз",
+    "checking": "Перевірка оновлень...",
+    "autoCheckTitle": "Автоперевірка оновлень",
+    "autoCheckDesc": "Як часто Savio перевіряє наявність нових версій на GitHub",
+    "intervalManual": "Вручну",
+    "interval3Days": "Кожні 3 дні",
+    "intervalWeekly": "Щотижня",
+    "lastChecked": "Перевірено: {time}",
+    "neverChecked": "Ще не перевірялося",
+    "releaseNotes": "Що нового в цій версії:",
+    "downloadZip": "Завантажити Portable (.zip)",
+    "downloadExe": "Завантажити Savio.exe",
+    "viewOnGithub": "Відкрити реліз на GitHub",
+    "badgeUpdate": "ОНОВИТИ",
+    "badgeNew": "НОВЕ",
+    "badgeUpToDate": "АКТУАЛЬНО",
+    "checkUpdatesTooltip": "Перевірити оновлення",
+    "errorChecking": "Не вдалося перевірити: {error}"
   }
 }

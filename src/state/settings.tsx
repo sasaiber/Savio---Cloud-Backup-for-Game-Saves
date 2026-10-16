@@ -15,6 +15,7 @@ export type ThemeMode = "system" | "light" | "dark";
 export type ColorSource = "windows" | "custom";
 export type ColorStyle = "tonal" | "vibrant" | "expressive";
 export type BackupTargetType = "asus" | "nas" | "local" | "gdrive" | "mega" | "webdav";
+export type UpdateCheckInterval = "manual" | "3days" | "weekly";
 
 export interface CloudAccountAuth {
   connected: boolean;
@@ -80,6 +81,8 @@ export interface Settings {
   corruptionGuardEnabled: boolean;
   autostartEnabled: boolean;
   autostartMinimized: boolean;
+  updateCheckInterval: UpdateCheckInterval;
+  lastUpdateCheckTime: number;
 }
 
 /** Savio's own brand color, used when Windows has no accent color. */
@@ -122,6 +125,8 @@ function defaultSettings(systemLocale: string): Settings {
     corruptionGuardEnabled: true,
     autostartEnabled: false,
     autostartMinimized: true,
+    updateCheckInterval: "3days",
+    lastUpdateCheckTime: 0,
   };
 }
 
@@ -208,6 +213,11 @@ function sanitize(raw: unknown, systemLocale: string): Settings {
     corruptionGuardEnabled: typeof r.corruptionGuardEnabled === "boolean" ? r.corruptionGuardEnabled : base.corruptionGuardEnabled,
     autostartEnabled: typeof r.autostartEnabled === "boolean" ? r.autostartEnabled : base.autostartEnabled,
     autostartMinimized: typeof r.autostartMinimized === "boolean" ? r.autostartMinimized : base.autostartMinimized,
+    updateCheckInterval:
+      r.updateCheckInterval === "manual" || r.updateCheckInterval === "3days" || r.updateCheckInterval === "weekly"
+        ? r.updateCheckInterval
+        : base.updateCheckInterval,
+    lastUpdateCheckTime: typeof r.lastUpdateCheckTime === "number" ? r.lastUpdateCheckTime : base.lastUpdateCheckTime,
   };
 }
 

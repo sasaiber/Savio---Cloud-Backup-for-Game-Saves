@@ -110,13 +110,30 @@ export function Onboarding({ onFinish }: { onFinish: () => void }) {
                 transition={springs.spatial}
                 style={{ display: "flex", flexDirection: "column", gap: 20 }}
               >
-                <div>
-                  <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8, letterSpacing: "-0.5px" }}>
-                    {t("onboarding.welcomeTitle")}
-                  </h1>
-                  <p style={{ fontSize: 15, color: "var(--md-sys-color-on-surface-variant)", lineHeight: 1.5 }}>
-                    {t("onboarding.welcomeText")}
-                  </p>
+                <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                  <div
+                    style={{
+                      width: 72,
+                      height: 72,
+                      borderRadius: 22,
+                      background: "linear-gradient(135deg, var(--md-sys-color-primary) 0%, var(--md-sys-color-tertiary) 100%)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 10px 24px -4px var(--md-sys-color-shadow)",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <SavioLogo size={46} color="#FFFFFF" fillOpacity={0.22} />
+                  </div>
+                  <div>
+                    <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, letterSpacing: "-0.5px" }}>
+                      {t("onboarding.welcomeTitle")}
+                    </h1>
+                    <p style={{ fontSize: 15, color: "var(--md-sys-color-on-surface-variant)", lineHeight: 1.4, margin: 0 }}>
+                      {t("onboarding.welcomeText")}
+                    </p>
+                  </div>
                 </div>
 
                 <div style={{ marginTop: 8 }}>

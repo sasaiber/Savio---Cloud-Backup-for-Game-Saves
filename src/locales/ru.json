@@ -532,5 +532,33 @@
     "stageDownloading": "Загрузка",
     "stageRestoring": "Восстановление",
     "hide": "Скрыть"
+  },
+  "updater": {
+    "title": "Обновления Savio",
+    "subtitle": "Проверка версий и релизы GitHub",
+    "currentVersion": "Текущая версия",
+    "latestVersion": "Последний релиз",
+    "upToDate": "У вас установлена последняя версия",
+    "upToDateDesc": "Savio полностью обновлен и актуален.",
+    "updateAvailable": "Доступна новая версия: {version}!",
+    "updateAvailableDesc": "Рекомендуется обновиться для получения новых возможностей и исправлений.",
+    "checkNow": "Проверить сейчас",
+    "checking": "Проверка обновлений...",
+    "autoCheckTitle": "Автопроверка обновлений",
+    "autoCheckDesc": "Как часто Savio проверяет наличие новых версий на GitHub",
+    "intervalManual": "Вручную",
+    "interval3Days": "Каждые 3 дня",
+    "intervalWeekly": "Каждую неделю",
+    "lastChecked": "Проверено: {time}",
+    "neverChecked": "Ещё не проверялось",
+    "releaseNotes": "Что нового в этой версии:",
+    "downloadZip": "Скачать Portable (.zip)",
+    "downloadExe": "Скачать Savio.exe",
+    "viewOnGithub": "Открыть релиз на GitHub",
+    "badgeUpdate": "ОБНОВИТЬ",
+    "badgeNew": "НОВОЕ",
+    "badgeUpToDate": "АКТУАЛЬНО",
+    "checkUpdatesTooltip": "Проверить обновления",
+    "errorChecking": "Не удалось проверить: {error}"
   }
 }

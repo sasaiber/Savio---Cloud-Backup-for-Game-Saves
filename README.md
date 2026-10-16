@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/icon.svg" width="96" height="96" alt="Savio Logo" />
+  <img src="public/icon.svg" width="128" height="128" alt="Savio Logo" />
 </p>
 
 <h1 align="center">Savio</h1>

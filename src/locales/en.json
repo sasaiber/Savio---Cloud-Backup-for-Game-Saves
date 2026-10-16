@@ -532,5 +532,33 @@
     "stageDownloading": "Downloading",
     "stageRestoring": "Restoring",
     "hide": "Hide"
+  },
+  "updater": {
+    "title": "Savio Updates",
+    "subtitle": "Version checker and GitHub releases",
+    "currentVersion": "Current Version",
+    "latestVersion": "Latest Release",
+    "upToDate": "You are using the latest version",
+    "upToDateDesc": "Savio is fully up to date and ready.",
+    "updateAvailable": "New version available: {version}!",
+    "updateAvailableDesc": "An update is recommended for new features, optimizations, and fixes.",
+    "checkNow": "Check Now",
+    "checking": "Checking for updates...",
+    "autoCheckTitle": "Automatic Update Checks",
+    "autoCheckDesc": "How often Savio automatically checks GitHub for new releases",
+    "intervalManual": "Manual",
+    "interval3Days": "Every 3 days",
+    "intervalWeekly": "Every week",
+    "lastChecked": "Checked: {time}",
+    "neverChecked": "Never checked yet",
+    "releaseNotes": "What's new in this release:",
+    "downloadZip": "Download Portable (.zip)",
+    "downloadExe": "Download Savio.exe",
+    "viewOnGithub": "View Release on GitHub",
+    "badgeUpdate": "UPDATE",
+    "badgeNew": "NEW",
+    "badgeUpToDate": "UP TO DATE",
+    "checkUpdatesTooltip": "Check for updates",
+    "errorChecking": "Check failed: {error}"
   }
 }

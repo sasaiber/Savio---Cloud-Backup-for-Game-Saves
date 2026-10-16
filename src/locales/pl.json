@@ -532,5 +532,33 @@
     "stageDownloading": "Pobieranie",
     "stageRestoring": "Przywracanie",
     "hide": "Ukryj"
+  },
+  "updater": {
+    "title": "Aktualizacje Savio",
+    "subtitle": "Sprawdzanie wersji i wydania GitHub",
+    "currentVersion": "Bieżąca wersja",
+    "latestVersion": "Najnowsze wydanie",
+    "upToDate": "Posiadasz najnowszą wersję",
+    "upToDateDesc": "Savio jest w pełni zaktualizowany i gotowy do pracy.",
+    "updateAvailable": "Dostępna nowa wersja: {version}!",
+    "updateAvailableDesc": "Zaleca się aktualizację w celu uzyskania nowych funkcji i poprawek.",
+    "checkNow": "Sprawdź teraz",
+    "checking": "Sprawdzanie aktualizacji...",
+    "autoCheckTitle": "Automatyczne sprawdzanie aktualizacji",
+    "autoCheckDesc": "Jak często Savio sprawdza dostępność nowych wydań na GitHubie",
+    "intervalManual": "Ręcznie",
+    "interval3Days": "Co 3 dni",
+    "intervalWeekly": "Co tydzień",
+    "lastChecked": "Sprawdzono: {time}",
+    "neverChecked": "Jeszcze nie sprawdzano",
+    "releaseNotes": "Co nowego w tym wydaniu:",
+    "downloadZip": "Pobierz Portable (.zip)",
+    "downloadExe": "Pobierz Savio.exe",
+    "viewOnGithub": "Otwórz wydanie na GitHubie",
+    "badgeUpdate": "AKTUALIZUJ",
+    "badgeNew": "NOWOŚĆ",
+    "badgeUpToDate": "AKTUALNE",
+    "checkUpdatesTooltip": "Sprawdź aktualizacje",
+    "errorChecking": "Nie udało się sprawdzić: {error}"
   }
 }

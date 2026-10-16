@@ -23,7 +23,7 @@ export const SavioLogo = memo(function SavioLogo({
     <svg
       width={size}
       height={size}
-      viewBox="0 0 100 100"
+      viewBox="14 18 72 68"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}

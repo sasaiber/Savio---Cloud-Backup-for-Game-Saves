@@ -5,12 +5,16 @@ import { LANGUAGES, type Language } from "../i18n/languages";
 import { Card } from "../components/Card";
 import { Button } from "../components/Button";
 import { Icon } from "../components/Icon";
+import { SavioLogo } from "../components/SavioLogo";
+import { UpdateModal } from "../components/UpdateModal";
+import { APP_VERSION } from "../lib/updater";
 import { api } from "../lib/tauri";
 
 export function Settings() {
   const { t } = useI18n();
   const { settings, update, factoryResetApp, accentColor, system } = useSettings();
 
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [showResetModal, setShowResetModal] = useState(false);
   const [wipeSnapshots, setWipeSnapshots] = useState(true);
   const [wipeCache, setWipeCache] = useState(true);
@@ -846,6 +850,107 @@ export function Settings() {
           </div>
         </Card>
 
+        {/* App Updates Section */}
+        <Card elevation="low" radius={28}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <div
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 14,
+                  background: "linear-gradient(135deg, var(--md-sys-color-primary) 0%, var(--md-sys-color-tertiary) 100%)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 4px 14px var(--md-sys-color-shadow)",
+                  flexShrink: 0,
+                }}
+              >
+                <SavioLogo size={28} color="#FFFFFF" />
+              </div>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 800 }}>{t("updater.title")}</div>
+                <div style={{ fontSize: 12, color: "var(--md-sys-color-on-surface-variant)", marginTop: 2 }}>
+                  {t("updater.subtitle")} • v{APP_VERSION}
+                </div>
+              </div>
+            </div>
+
+            <Button
+              variant="filled"
+              icon="sync"
+              onClick={() => setShowUpdateModal(true)}
+            >
+              {t("updater.checkNow")}
+            </Button>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            {/* Auto check frequency */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "14px 16px",
+                borderRadius: 16,
+                background: "var(--md-sys-color-surface-container)",
+                border: "1px solid var(--md-sys-color-outline-variant)",
+                flexWrap: "wrap",
+                gap: 12,
+              }}
+            >
+              <div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: "var(--md-sys-color-on-surface)" }}>
+                  {t("updater.autoCheckTitle")}
+                </div>
+                <div style={{ fontSize: 12, color: "var(--md-sys-color-on-surface-variant)", marginTop: 2 }}>
+                  {t("updater.autoCheckDesc")}
+                </div>
+              </div>
+
+              <div style={{ display: "flex", gap: 8 }}>
+                {(["manual", "3days", "weekly"] as const).map((int) => {
+                  const isSelected = settings.updateCheckInterval === int;
+                  const labelKey =
+                    int === "manual"
+                      ? "updater.intervalManual"
+                      : int === "3days"
+                      ? "updater.interval3Days"
+                      : "updater.intervalWeekly";
+                  return (
+                    <button
+                      key={int}
+                      type="button"
+                      onClick={() => update({ updateCheckInterval: int })}
+                      className="m3-btn"
+                      style={{
+                        padding: "8px 14px",
+                        borderRadius: 12,
+                        border: isSelected
+                          ? "1.5px solid var(--md-sys-color-primary)"
+                          : "1px solid var(--md-sys-color-outline-variant)",
+                        background: isSelected
+                          ? "var(--md-sys-color-primary-container)"
+                          : "var(--md-sys-color-surface-container-highest)",
+                        color: isSelected
+                          ? "var(--md-sys-color-on-primary-container)"
+                          : "var(--md-sys-color-on-surface-variant)",
+                        fontWeight: isSelected ? 800 : 500,
+                        fontSize: 12,
+                        cursor: "pointer",
+                      }}
+                    >
+                      {t(labelKey)}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </Card>
+
         {/* Danger Zone: Factory Reset */}
         <Card
           elevation="low"
@@ -1067,6 +1172,11 @@ export function Settings() {
             </div>
           </div>
         )}
+
+        <UpdateModal
+          isOpen={showUpdateModal}
+          onClose={() => setShowUpdateModal(false)}
+        />
       </div>
     </div>
   );

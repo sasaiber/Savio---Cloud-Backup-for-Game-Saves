@@ -1,8 +1,10 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import { Icon, type IconName } from "./Icon";
 import { SavioLogo } from "./SavioLogo";
+import { UpdateModal } from "./UpdateModal";
 import { useI18n } from "../i18n/I18nProvider";
 import { useSettings } from "../state/settings";
+import { checkForAppUpdates, APP_VERSION, type UpdateInfo } from "../lib/updater";
 
 export type TabId = "library" | "clouds" | "settings";
 
@@ -45,7 +47,28 @@ export const NavigationRail = memo(function NavigationRail({
   onTabChange,
 }: NavigationRailProps) {
   const { t } = useI18n();
-  const { system } = useSettings();
+  const { system, settings, update } = useSettings();
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
+  const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
+
+  // Auto-check on interval (3 days / weekly)
+  useEffect(() => {
+    if (settings.updateCheckInterval === "manual") return;
+    const intervalMs =
+      settings.updateCheckInterval === "3days"
+        ? 3 * 24 * 60 * 60 * 1000
+        : 7 * 24 * 60 * 60 * 1000;
+
+    const elapsed = Date.now() - (settings.lastUpdateCheckTime || 0);
+    if (elapsed >= intervalMs) {
+      checkForAppUpdates(APP_VERSION)
+        .then((info) => {
+          setUpdateInfo(info);
+          update({ lastUpdateCheckTime: Date.now() });
+        })
+        .catch(() => {});
+    }
+  }, [settings.updateCheckInterval, settings.lastUpdateCheckTime, update]);
 
   return (
     <aside
@@ -86,7 +109,7 @@ export const NavigationRail = memo(function NavigationRail({
             cursor: "pointer",
           }}
         >
-          <SavioLogo size={28} color="#FFFFFF" />
+          <SavioLogo size={32} color="#FFFFFF" />
         </button>
       </div>
 
@@ -211,7 +234,53 @@ export const NavigationRail = memo(function NavigationRail({
         >
           {system.portable ? "PORT" : "SAVIO"}
         </div>
+
+        {/* Update Check Pill directly under SAVIO label */}
+        <button
+          type="button"
+          onClick={() => setShowUpdateModal(true)}
+          title={t("updater.checkUpdatesTooltip")}
+          className="m3-btn"
+          style={{
+            marginTop: 2,
+            padding: "3px 8px",
+            borderRadius: 9999,
+            display: "flex",
+            alignItems: "center",
+            gap: 4,
+            background: updateInfo?.hasUpdate
+              ? "linear-gradient(135deg, var(--md-sys-color-primary) 0%, var(--md-sys-color-tertiary) 100%)"
+              : "var(--md-sys-color-surface-container-highest)",
+            color: updateInfo?.hasUpdate ? "#FFFFFF" : "var(--md-sys-color-on-surface-variant)",
+            border: updateInfo?.hasUpdate ? "none" : "1px solid var(--md-sys-color-outline-variant)",
+            boxShadow: updateInfo?.hasUpdate ? "0 2px 10px rgba(229, 57, 53, 0.45)" : "none",
+            cursor: "pointer",
+            fontSize: 10,
+            fontWeight: 800,
+            letterSpacing: "0.2px",
+            transition: "all 0.18s ease",
+          }}
+        >
+          {updateInfo?.hasUpdate ? (
+            <>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#FFFFFF", display: "inline-block" }} />
+              <span>{t("updater.badgeNew")}</span>
+            </>
+          ) : (
+            <>
+              <Icon name="sync" size={11} color="var(--md-sys-color-primary)" />
+              <span>v{APP_VERSION}</span>
+            </>
+          )}
+        </button>
       </div>
+
+      <UpdateModal
+        isOpen={showUpdateModal}
+        onClose={() => setShowUpdateModal(false)}
+        cachedUpdateInfo={updateInfo}
+        onUpdateInfoChanged={setUpdateInfo}
+      />
     </aside>
   );
 });
