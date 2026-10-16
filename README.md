@@ -1,13 +1,21 @@
-# Savio 🎮
+<p align="center">
+  <img src="public/icon.svg" width="96" height="96" alt="Savio Logo" />
+</p>
 
-> **Open-Source Cloud Game Save Vault & Manager for Windows 10/11**  
-> Automated backup, multi-cloud synchronization, and conflict resolution built with **Material 3 Expressive**.
+<h1 align="center">Savio</h1>
 
-[![Windows 11 Compatible](https://img.shields.io/badge/Windows%2011-Compatible-0078D4?logo=windows&logoColor=white)](https://github.com/sasaiber/Savio---Cloud-Backup-for-Game-Saves/releases)
-[![Rust](https://img.shields.io/badge/Backend-Rust%20%2F%20Tauri%202.0-DEA584?logo=rust&logoColor=white)](https://tauri.app/)
-[![React 19](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript%20%2B%20Vite-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Release](https://img.shields.io/badge/Release-v0.1.0-green.svg)](https://github.com/sasaiber/Savio---Cloud-Backup-for-Game-Saves/releases)
+<p align="center">
+  <strong>Open-Source Cloud Game Save Vault & Manager for Windows 10/11</strong><br>
+  Automated backup, multi-cloud synchronization, and conflict resolution built with <strong>Material 3 Expressive</strong>.
+</p>
+
+<p align="center">
+  <a href="https://github.com/sasaiber/Savio---Cloud-Backup-for-Game-Saves/releases"><img src="https://img.shields.io/badge/Windows%2011-Compatible-0078D4?logo=windows&logoColor=white" alt="Windows 11 Compatible" /></a>
+  <a href="https://tauri.app/"><img src="https://img.shields.io/badge/Backend-Rust%20%2F%20Tauri%202.0-DEA584?logo=rust&logoColor=white" alt="Rust / Tauri 2.0" /></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript%20%2B%20Vite-61DAFB?logo=react&logoColor=black" alt="React 19" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  <a href="https://github.com/sasaiber/Savio---Cloud-Backup-for-Game-Saves/releases"><img src="https://img.shields.io/badge/Release-v0.1.0-green.svg" alt="Release" /></a>
+</p>
 
 ---
 
