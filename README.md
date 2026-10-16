@@ -11,6 +11,32 @@
 
 ---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screen/library.png" alt="Savio Game Library" width="100%" />
+</p>
+
+* **Game Library**: Unified dashboard displaying launcher titles (Steam, Epic, Ubisoft, Rockstar), standalone scanned games, sync status, and storage overview.
+
+<br>
+
+<p align="center">
+  <img src="screen/game-settings.png" alt="Game Settings & Automation" width="100%" />
+</p>
+
+* **Game Settings & Automation**: Save directory mapping, executable process detection, and automated backup triggers (exit watcher, interval sync, cloud upload).
+
+<br>
+
+<p align="center">
+  <img src="screen/save-manager.png" alt="Save Manager & Snapshots" width="100%" />
+</p>
+
+* **Save Manager**: Local and cloud snapshot history with one-click restore and automatic pre-restore safety snapshots.
+
+---
+
 ## 🌟 Key Features
 
 ### 🔄 Multi-Cloud & Storage Providers
